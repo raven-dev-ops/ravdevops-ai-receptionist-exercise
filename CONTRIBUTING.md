@@ -4,7 +4,7 @@ This is a public interview exercise repository. The contribution model is intent
 
 ## Who may contribute
 
-Only invited candidate collaborators may submit solution pull requests that will be reviewed.
+Only invited candidates may submit solution pull requests that will be reviewed.
 
 Outside contributors may read the repository, but unsolicited solution PRs will be closed without review.
 

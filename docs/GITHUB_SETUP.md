@@ -10,7 +10,8 @@ This file contains the recommended GitHub metadata and admin settings for publis
 - [ ] Apply the suggested GitHub topics exactly as listed below.
 - [ ] Apply the visibility and merge settings below.
 - [ ] Configure branch protection for `main` using the policy below.
-- [ ] Add only invited candidates as temporary collaborators.
+- [ ] Decide whether candidates will work from forks or direct repo access.
+- [ ] If using direct repo access, add only invited candidates as temporary collaborators.
 - [ ] Seed labels from `docs/github-labels.yml`.
 - [ ] Publish the wiki using `wiki/` and `docs/WIKI_SETUP.md`.
 
@@ -48,7 +49,7 @@ Use these GitHub topics:
 
 ## Suggested social preview text
 
-`Public RavDevOps backend and AI systems exercise. Invited candidate collaborators solve scoped issues and explain the implementation during review.`
+`Public RavDevOps backend and AI systems exercise. Invited candidates solve scoped issues and explain the implementation during review.`
 
 ## Visibility and Contribution Posture
 
@@ -84,7 +85,7 @@ Require:
 
 ## Collaborator Model
 
-Only add invited candidates as temporary collaborators. Remove access after the exercise window closes.
+Candidates can work from forks by default. If direct repo access is preferred, add only invited candidates as temporary collaborators and remove access after the exercise window closes.
 
 ## Label Taxonomy
 

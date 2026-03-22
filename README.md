@@ -2,7 +2,7 @@
 
 Public RavDevOps candidate exercise for AI systems, retrieval, scheduling, and containerized backend delivery.
 
-This repository is a **public coding exercise** used during RavDevOps technical interviews. The exercise is open for review, but **solution pull requests are only reviewed from invited candidate collaborators**. External drive-by PRs will be closed without review.
+This repository is a **public coding exercise** used during RavDevOps technical interviews. The exercise is open for review, but **solution pull requests are only reviewed from invited candidates**. External drive-by PRs will be closed without review.
 
 AI assistance is allowed. Candidates must still explain:
 - what the AI generated,
@@ -32,7 +32,7 @@ Build and improve a minimal AI receptionist service that can:
 
 ## Contribution policy
 
-Only invited candidate collaborators may submit solution PRs.
+Only invited candidates may submit solution PRs for review.
 
 Before opening a PR:
 1. claim an issue by commenting on it,

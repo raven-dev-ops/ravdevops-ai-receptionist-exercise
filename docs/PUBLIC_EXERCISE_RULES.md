@@ -4,7 +4,7 @@ This repository is public, but the interview workflow is controlled.
 
 ## Public visibility does not mean open contribution
 
-The exercise prompt and code are public for transparency. Solution PRs are only reviewed from invited candidate collaborators.
+The exercise prompt and code are public for transparency. Solution PRs are only reviewed from invited candidates.
 
 ## Claiming work
 

@@ -17,4 +17,4 @@ https://ravdevops.com/
 python, fastapi, docker, technical-interview, candidate-exercise, hiring, backend-api, ai-systems, rag, retrieval-augmented-generation, scheduling, ci-cd, devops, platform-engineering, crm
 
 ## Suggested pinned issue text
-This repository is public for transparency, but solution pull requests are only reviewed from invited candidate collaborators. AI is allowed, disclosure is required, and candidates must explain their implementation during interview review.
+This repository is public for transparency, but solution pull requests are only reviewed from invited candidates. AI is allowed, disclosure is required, and candidates must explain their implementation during interview review.

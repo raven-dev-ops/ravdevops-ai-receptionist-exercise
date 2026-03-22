@@ -7,7 +7,8 @@
 - [ ] Publish wiki pages from `wiki/`.
 - [ ] Seed labels from `docs/github-labels.yml`.
 - [ ] Create selected issues from `docs/seed-issues/`.
-- [ ] Invite candidates as temporary collaborators.
+- [ ] Decide whether candidates will work from forks or temporary direct repo access.
+- [ ] If using direct repo access, invite candidates as temporary collaborators.
 - [ ] Have candidates claim issues in comments.
 - [ ] Require PR template completion.
 - [ ] Review code plus explanation quality.

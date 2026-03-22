@@ -1,0 +1,18 @@
+services:
+  api:
+    build: .
+    container_name: ravdevops-ai-receptionist-exercise
+    init: true
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz', timeout=5)"]
+      interval: 15s
+      timeout: 5s
+      start_period: 10s
+      retries: 5

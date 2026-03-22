@@ -1,0 +1,27 @@
+name: Candidate task
+description: Maintainer template for publishing a scoped exercise issue.
+title: "[Task]: "
+labels: ["candidate-task"]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes

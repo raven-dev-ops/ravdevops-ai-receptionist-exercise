@@ -1,0 +1,7 @@
+Business hours are Monday through Friday from 8:00 AM to 6:00 PM Central Time. Follow-up appointments requested outside those hours should be captured for manual review rather than blindly confirmed.
+
+RavDevOps delivers software engineering outcomes with practical architecture, implementation, and operational handoff. Typical work includes backend APIs, integration layers, refactors, and milestone-based delivery.
+
+The starter exercise is intentionally conservative. If the system does not have enough support from the knowledge base, it should prefer an explicit "information unavailable" response over unsupported assumptions.
+
+The receptionist flow can capture a caller request, provide a grounded answer from approved business context, and log the interaction for later follow-up.

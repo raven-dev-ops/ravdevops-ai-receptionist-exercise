@@ -1,0 +1,40 @@
+labels:
+  - name: candidate-task
+    color: "0052cc"
+    description: Scoped interview exercise task
+  - name: difficulty:easy
+    color: "0e8a16"
+    description: Small change with narrow blast radius
+  - name: difficulty:medium
+    color: "fbca04"
+    description: Moderate design and implementation work
+  - name: difficulty:hard
+    color: "d93f0b"
+    description: Broad or deeper systems work
+  - name: area:api
+    color: "5319e7"
+    description: API and route layer work
+  - name: area:data
+    color: "1d76db"
+    description: Persistence and schema work
+  - name: area:retrieval
+    color: "5319e7"
+    description: Knowledge retrieval and answer grounding
+  - name: area:scheduling
+    color: "c2e0c6"
+    description: Appointment and business-rule handling
+  - name: area:devops
+    color: "bfd4f2"
+    description: Docker, CI, or execution environment work
+  - name: area:observability
+    color: "006b75"
+    description: Logging, metrics, or diagnostics
+  - name: area:security
+    color: "b60205"
+    description: Security or verification work
+  - name: docs
+    color: "0075ca"
+    description: Documentation-only work
+  - name: blocked
+    color: "000000"
+    description: Waiting on maintainer input

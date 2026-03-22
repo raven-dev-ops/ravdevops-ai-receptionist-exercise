@@ -1,0 +1,12 @@
+.git
+.gitignore
+.env
+.venv
+.pytest_cache
+__pycache__
+*.pyc
+data/*.db
+data/*.sqlite
+dist
+build
+ravdevops_ai_receptionist_exercise_bundle

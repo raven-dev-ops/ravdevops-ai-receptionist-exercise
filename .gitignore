@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.pytest_cache/
+.coverage
+htmlcov/
+data/*.db
+data/*.sqlite
+dist/
+build/
+ravdevops_ai_receptionist_exercise_bundle/

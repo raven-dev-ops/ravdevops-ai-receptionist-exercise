@@ -1,0 +1,117 @@
+name: Candidate Submission Check
+
+on:
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify required files
+        run: |
+          required_files=(
+            "Dockerfile"
+            "docker-compose.yml"
+            "README.md"
+            "ARCHITECTURE.md"
+            "LICENSE.md"
+            "CONTRIBUTING.md"
+            "SECURITY.md"
+            "requirements.txt"
+            "app/main.py"
+            "scripts/review_check.py"
+          )
+          for file in "${required_files[@]}"; do
+            if [ ! -e "$file" ]; then
+              echo "Missing required file: $file"
+              exit 1
+            fi
+          done
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run repo auto-check
+        run: |
+          python scripts/review_check.py
+
+      - name: Run public tests
+        run: |
+          pytest -q
+
+      - name: Build Docker image
+        run: |
+          docker build -t ravdevops-ai-receptionist-exercise .
+
+      - name: Start compose stack
+        run: |
+          cp .env.example .env
+          docker compose up -d --build
+          sleep 10
+          docker compose ps
+
+      - name: Smoke test API
+        run: |
+          python - <<'PY'
+          import json
+          import time
+          import urllib.request
+
+          urls = [
+              "http://127.0.0.1:8000/health",
+              "http://127.0.0.1:8000/docs",
+              "http://127.0.0.1:8000/logs",
+              "http://127.0.0.1:8000/appointments",
+          ]
+
+          for url in urls:
+              ok = False
+              for _ in range(10):
+                  try:
+                      with urllib.request.urlopen(url, timeout=5) as resp:
+                          if resp.status == 200:
+                              ok = True
+                              break
+                  except Exception:
+                      time.sleep(1)
+              if not ok:
+                  raise SystemExit(f"Smoke test failed for {url}")
+
+          payload = {
+              "caller_id": "+18165551212",
+              "message": "What are your business hours and can someone call me tomorrow at 10 AM?"
+          }
+          req = urllib.request.Request(
+              "http://127.0.0.1:8000/incoming-call",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req, timeout=10) as resp:
+              if resp.status != 200:
+                  raise SystemExit("/incoming-call smoke test failed")
+
+          print("Public smoke tests passed")
+          PY
+
+      - name: Dump compose logs on failure
+        if: failure()
+        run: docker compose logs --no-color || true
+
+      - name: Shut down stack
+        if: always()
+        run: docker compose down -v || true
